@@ -17,7 +17,7 @@ const app = express();
 security.applyMiddleware(app);
 app.set('trust proxy', 1);
 app.use(helmet());
-app.all('*', (req, res, next) => {
+/*app.all('*', (req, res, next) => {
 	// CORS headers
 	res.header(
 		'Access-Control-Allow-Origin',
@@ -30,7 +30,7 @@ app.all('*', (req, res, next) => {
 		'Origin, X-Requested-With, Content-Type, Accept, Key, Authorization'
 	);
 	next();
-});
+});*/
 app.use(responseTime());
 app.use(cookieParser(settings.cookieSecretKey));
 app.use(bodyParser.urlencoded({ extended: true }));
